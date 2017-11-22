@@ -1,0 +1,56 @@
+//--- *************** ---//
+//--- SEARCH BOX ---//
+//--- *************** ---//
+
+//- A contained form which allows users to enter and submit keywords to global website searches.
+
+//--- DOCUMENTATION ---//
+//---------------------------------------------------------
+
+mixin documentation
+  | //- Added: 1.0.0
+  | //- @param {object} location - You can add a search box to your template with a standard or results variation.
+  | //- @param {string} container classes - Optional Checkbox to search All of the Department can also be added as an advanced feature.
+  | +gef_search_box('header')
+
+mixin usage
+  pre
+    code.language-jade
+      +documentation
+
+
+//--- HTML OUTPUT ---//
+//---------------------------------------------------------
+
+mixin gef_search_box(location)
+
+  - var randId = Math.floor((Math.random() * 50) + 1)
+  - var id = 'search-box'
+  - var searchButtonClass = ''
+
+  if location == 'header'
+    - var additionalClass = ' gef-search__toggle-target'
+    - var id = 'global-search'
+    - var searchButtonClass = 'show-on-sr'
+  else
+    - var additionalClass = ' gef-search--body'
+
+  form(id= id action="#" class="gef-search uk-form " + additionalClass aria-hidden="false" aria-labelledby="global-search-button")
+
+    fieldset
+      legend.show-on-sr Global Search
+      label(for="search")
+        span.show-on-sr Enter your search
+      input.uk-form-large(type="text" id="search" name="q" placeholder="Search" tabindex="0")
+      input(type="hidden" name="site" value="secure_ce_intranet")
+      input(type="hidden" name="access" value="s")
+
+      button(type="submit" id="btnSearch" + randId aria-label="Submit search" tabindex="0")
+        span.show-on-sr Search
+        i.uk-icon-search
+
+    if location != 'header'
+      p.gef-search__helper
+        | Did you mean:&nbsp;
+        a(href="#")
+          +lipsum(2, "words")

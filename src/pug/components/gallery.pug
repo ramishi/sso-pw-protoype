@@ -1,0 +1,12 @@
+mixin gallery(number)
+  
+  - var current = 0
+  - var height = 200
+  - var width = 200
+    
+  ul.uk-grid-width-1-2.uk-grid-width-small-1-4.uk-thumbnav.sws-gallery
+    while current < number
+      li
+        a.uk-thumbnail(data-uk-lightbox="{group:'group1'}", data-lightbox-type="image"  , href=`https://unsplash.it/${width*3}/${height*3}/?random&image=${current+10}`)
+          img(src=`https://unsplash.it/${width}/${height}/?random&image=${current+10}`)
+          -current++

@@ -1,0 +1,12 @@
+mixin list_item(number, icon)
+    - var counter = 0;
+    
+    while counter < number
+        li
+            a
+                if icon
+                    +random_icon
+                    | 
+
+                +lipsum(2, "words")
+        - counter++

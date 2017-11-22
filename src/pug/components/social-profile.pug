@@ -1,0 +1,39 @@
+mixin social_profile(...profiles)
+  - var profileColumn = 2;
+
+  - if (profiles.length != 2 ) {
+      - profileColumn = 1;
+  - }
+  - var postColumn = 1;
+  - if (profiles.length != 3 ) {
+      - postColumn = 4 / profiles.length;
+  - }
+
+
+
+    div.sws-social-profile.uk-grid(data-uk-grid-margin)
+      each profile in profiles
+        div(class='uk-width-medium-1-'+profiles.length)
+          h3
+            i(class='uk-icon-small uk-icon-'+profile)
+            = profile
+
+
+
+          div.uk-grid
+            - var postCounter = 0;
+              while postCounter < postColumn
+                div(class='uk-width-medium-1-'+postColumn).uk-margin-bottom
+                  article.uk-comment
+                    header.uk-comment-header
+                      a.uk-link-muted
+                        img.uk-comment-avatar(src="https://unsplash.it/50/50/?random" width="50" height="50" alt="User avatar")
+                      h4.uk-comment-title
+                        a.uk-link-muted Author
+                      div.uk-comment-meta
+                        a.uk-link-muted #{Math.floor((Math.random() * 10) + 1)} days ago
+
+                    div.uk-comment-body
+                      p
+                        +lipsum(4, "sentences")
+                - postCounter++

@@ -1,0 +1,147 @@
+mixin horizontal_nav(HighSchool)
+  nav.uk-navbar.uk-hidden-small.sws-horizontal-nav
+    div.uk-container.uk-container-center
+
+      ul.uk-subnav.uk-subnav-pill.uk-flex.uk-flex-space-between
+          if HighSchool
+            li.uk-parent(data-uk-dropdown="" aria-haspopup="true" aria-expanded="false")
+              a
+                 | About the school
+                 |
+                 i.uk-icon-caret-down
+
+              div.uk-dropdown
+                ul.uk-nav.uk-nav-navbar
+                    li.subnav-parent
+                        a
+                          | Annual Report
+                          |
+                          i.uk-icon-caret-right
+                          ul.uk-nav-navbar.subnav
+                            li: a(href="") School assessment results
+                    li.subnav-parent
+                      a
+                        | Enrolments
+                        |
+                        i.uk-icon-caret-right
+                        ul.uk-nav-navbar.subnav
+                            li: a(href="") New enrolments
+                            li: a(href="") Make an appointment
+                            li: a(href="") Catchment map
+                            li: a(href="") Student enrolment numbers
+                            li: a(href="") School fees
+                            li: a(href="") Financial assistance
+                    li
+                      a
+                        | Our staff
+                        |
+                    li.subnav-parent
+                      a
+                        | Rules and policies
+                        |
+                        i.uk-icon-caret-right
+                        ul.uk-nav-navbar.subnav
+                            li: a(href="") Department policy library
+                            li: a(href="") Attendance and absences
+                            li: a(href="") School practices
+
+            li.uk-parent(data-uk-dropdown="" aria-haspopup="true" aria-expanded="false")
+              a
+                 | How we support you
+                 |
+                 i.uk-icon-caret-down
+
+              div.uk-dropdown.uk-dropdown-navbar.uk-dropdown-bottom(aria-hidden="true" tabindex="")
+                ul.uk-nav.uk-nav-navbar
+
+                  li.subnav-parent
+                        a
+                          | Student health and safety
+                          |
+                          i.uk-icon-caret-right
+                          ul.uk-nav-navbar.subnav
+                            li: a(href="") Psychological services
+                  li
+                        a
+                          | Learning support
+                  li
+                        a
+                          | Aboriginal student support
+                  li
+                        a
+                          | Special needs support
+                  li.subnav-parent
+                        a
+                          | Parents and community
+                          |
+                          i.uk-icon-caret-right
+                          ul.uk-nav-navbar.subnav
+                            li: a(href="") Supporting families
+                            li: a(href="") P&C meetings
+                            li: a(href="") Volunteering for events
+
+            li.uk-parent(data-uk-dropdown="" aria-haspopup="true" aria-expanded="false")
+              a
+                 | Subjects and activities
+                 |
+                 i.uk-icon-caret-down
+
+              div.uk-dropdown.uk-dropdown-navbar.uk-dropdown-bottom(aria-hidden="true" tabindex="")
+                ul.uk-nav.uk-nav-navbar
+                  li
+                    a Assessment and reporting
+                  li
+                    a Academic opportunities
+                  li
+                    a Creative arts
+                  li
+                    a English
+                  li
+                    a Human society and its environment
+                  li
+                    a Languages
+                  li
+                    a Mathematics
+                  li
+                    a Personal development, health and physical education
+                  li
+                    a Science
+                  li
+                    a Technology and applied science
+                  li.subnav-parent
+                    a
+                      | Extra-curricular activities
+                      |
+                      i.uk-icon-caret-right
+                      ul.uk-nav-navbar.subnav
+                        li: a(href="") State-wide competitions
+                        li: a(href="") Visual arts, music, dance and drama
+                        li: a(href="") Premier's sporting challenge
+                        li: a(href="") Volunteering
+                        li: a(href="") Sports and recreation
+
+            li.uk-parent(data-uk-dropdown="" aria-haspopup="true" aria-expanded="false")
+              a
+                 | What's happening
+                 |
+                 i.uk-icon-caret-down
+
+              div.uk-dropdown.uk-dropdown-navbar.uk-dropdown-bottom(aria-hidden="true" tabindex="")
+                ul.uk-nav.uk-nav-navbar
+                  li
+                    a Newsletter
+                  li
+                    a News
+                  li
+                    a Calendar
+                  li
+                    a Image gallery
+
+
+
+
+          else
+             li
+              a
+
+

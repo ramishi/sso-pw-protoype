@@ -1,0 +1,17 @@
+mixin breadcrumbs(number)
+  - var current = 1
+
+  ul.uk-breadcrumb
+    while current <= number
+      if current == number
+        
+        li.uk-active
+          span
+            +lipsum(2, "words")
+      else
+
+        li
+          a(href="#")
+            +lipsum(2, "words")
+
+      -current++

@@ -1,0 +1,109 @@
+// This is the off-canvas mobile nav
+mixin global_mobile_nav()
+
+    #offcanvas-nav.uk-offcanvas
+        .uk-offcanvas-bar
+            ul.uk-nav.uk-nav-offcanvas.uk-nav-parent-icon(data-uk-nav)
+                form.gef-global-header__search-form(name="searchForm" method="get")
+                  label.searchBoxLabel#queryBoxLabel(for="query")
+                    span.sr-only Search
+                    input#query.link.empty(type="text" name="searchText" placeholder="Search site...")
+                    button#submit(type="submit" name="submit")
+                      i.uk-icon-search
+                      span.show-on-sr Submit
+                li.uk-parent
+                   a(href="#") About the school
+                   ul.uk-nav.uk-nav-navbar
+                      li.uk-parent
+                          a Annual Report
+                          ul.uk-nav.uk-nav-navbar
+                              li: a School assessment results
+                      li.uk-parent
+                          a Enrolments
+                          ul.uk-nav.uk-nav-navbar
+                              li: a(href="") New enrolments
+                              li: a(href="") Make an appointment
+                              li: a(href="") Catchment map
+                              li: a(href="") Student enrolment numbers
+                              li: a(href="") School fees
+                              li: a(href="") Financial assistance
+                      li
+                          a Our staff
+
+                      li.uk-parent
+                          a Rules and policies
+                          ul.uk-nav.uk-nav-navbar
+                              li: a(href="") Department policy library
+                              li: a(href="") Attendance and absences
+                              li: a(href="") School practices
+                li.uk-parent
+                   a(href="#") How we support you
+                   ul.uk-nav.uk-nav-navbar
+                    li.uk-parent
+                          a Student health and safety
+                            ul.uk-nav.uk-nav-navbar
+                              li: a(href="") Psychological services
+                    li
+                        a earning support
+                    li
+                        a Aboriginal student support
+                    li
+                        a Special needs support
+                    li.uk-parent
+                        a Parents and community
+                          ul.uk-nav.uk-nav-navbar
+                            li: a(href="") Supporting families
+                            li: a(href="") P&C meetings
+                            li: a(href="") Volunteering for events
+
+                li.uk-parent
+                    a(href="#") Subjects and activities
+                    ul.uk-nav.uk-nav-navbar
+                      li
+                        a Assessment and reporting
+                      li
+                        a Academic opportunities
+                      li
+                        a Creative arts
+                      li
+                        a English
+                      li
+                        a Human society and its environment
+                      li
+                        a Languages
+                      li
+                        a Mathematics
+                      li
+                        a Personal development, health and physical education
+                      li
+                        a Science
+                      li
+                        a Technology and applied science
+                      li.uk-parent
+                        a Extra-curricular activities
+                          ul.uk-nav-navbar
+                            li: a(href="") State-wide competitions
+                            li: a(href="") Visual arts, music, dance and drama
+                            li: a(href="") Premier's sporting challenge
+                            li: a(href="") Volunteering
+                            li: a(href="") Sports and recreation
+
+                li.uk-parent
+                  a(href="#") What's happening
+                  ul.uk-nav.uk-nav-navbar
+                    li
+                      a Newsletter
+                    li
+                      a News
+                    li
+                      a Calendar
+                    li
+                      a Image gallery
+
+
+
+
+                li.uk-nav-header Quick links
+                +quicklinks(true)
+                li.uk-nav-header Others
+                +utility_bar(true)

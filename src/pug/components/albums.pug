@@ -1,0 +1,15 @@
+mixin albums(number)
+
+  - var current = 0
+  - var height = 200
+  - var width = 350
+
+  div.sws-albums.uk-grid.uk-grid-width-1-2.uk-grid-width-medium-1-4
+    while current < number
+      div
+        a.sws-albums__albumn.uk-panel.uk-panel-box(href="standard.html")
+          div.uk-panel-teaser
+            img(src=`https://unsplash.it/${width}/${height}/?random&image=${current+10}`)
+          p
+            +lipsum(3, "words")
+      -current++

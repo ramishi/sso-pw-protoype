@@ -1,0 +1,19 @@
+mixin hero(smallSize, name, slogan, logo)
+
+  - var height = 400
+
+  if smallSize
+    - var height = 200
+
+  div.sws-hero.uk-cover-background(style=`background-image: url(https://unsplash.it/800/${height}/?blur)` class=smallSize ? "sws-hero--small" : "uk-position-relative" )
+    div.uk-container.uk-container-center.sws-hero__container
+
+      div(class=!smallSize? ["uk-position-cover", "uk-flex", "uk-flex-center", "uk-flex-middle", "uk-contrast"] : null)
+
+        a.sws-hero__lockup(src="homepage.html" class=smallSize? ["uk-flex", "uk-flex-middle"] : null)
+          img.sws-hero__logo(src="images/school-logo.svg" alt="School crest")
+          div
+            h1.sws-hero__name
+              +lipsum(2, "words")
+              span.sws-hero__name-extension Public School
+            p.sws-hero__slogan Simul autem sunt gravia

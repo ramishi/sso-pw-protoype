@@ -3,7 +3,7 @@
 
 <head>
   <!--#include file="file-includes/head.html" -->
-  <title>Create Password Department of Education</title>
+  <title>Change Password Department of Education</title>
 </head>
 
 <body class="standard">
@@ -16,9 +16,9 @@
         <div class="uk-container-center uk-width-medium-7-10 uk-width-large-5-10 uk-margin-large-top uk-margin-large-bottom sso-container">
           <div class="uk-block uk-block-default sso-block">
             <div class="uk-container uk-text-center">
-              <h1 id="forminfo" class="uk-h6 uk-margin-large-top">Create password</h1>
+              <h1 id="forminfo" class="uk-h6 uk-margin-large-top">Change password</h1>
               <fieldset>
-                <legend class="show-on-sr">Department of Education create password form</legend>
+                <legend class="show-on-sr">Department of Education change password form</legend>
 
                 <form name="frm1" class="uk-form" method="post" action="created.html">
                   <p class="uk-margin-remove">&nbsp;</p>
@@ -36,6 +36,13 @@
                   </div>
                   <p class="uk-margin-remove">&nbsp;</p>
                   <div>
+                      <div class="sso-example-id-container uk-width-medium-6-10">
+                          <label for="IDToken2" class="sso-field-label" id="lblPassword2">Existing Password</label>
+    
+                          <input type="password" name="IDToken3" id="IDToken3" value="" placeholder="Verify your current password" class=" uk-margin-top"
+                            autocomplete="current-password" autocorrect="off" autocapitalize="none" aria-labelledby="lblPassword2">
+                        </div>
+                        <p class="uk-margin-remove">&nbsp;</p>
                     <div class="sso-example-id-container uk-width-medium-6-10">
                       <label for="IDToken2" class="sso-field-label" id="lblPassword">New Password</label>
 
@@ -54,8 +61,11 @@
                   </div>
                 
 
-                <input name="Login.Submit" type="submit" class="uk-button uk-margin-top" value=" Save ">
+                <input name="Login.Submit" type="submit" class="uk-button uk-margin-top" value=" Update ">
               </form>
+              <p>
+                  <a href="index.html">Cancel</a>
+                </p>
                 <p class="uk-margin-remove">&nbsp;</p>
               </fieldset>
               <p class="uk-margin-remove">&nbsp;</p>

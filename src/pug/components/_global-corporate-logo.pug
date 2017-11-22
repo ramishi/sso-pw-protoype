@@ -1,0 +1,34 @@
+//--- *************** ---//
+//--- CORPORATE LOGO ---//
+//--- *************** ---//
+
+- var name = "Corporate Logo"
+
+//--- DOCUMENTATION ---//
+//---------------------------------------------------------
+
+mixin description
+  p
+    Displays the DoE logo encased in a link.
+
+mixin usage
+  h4 Using pug:
+    If you need to change the Corporate Name variables, they can be found in _variables.pug
+  pre
+    code.lanaguage-pug
+      | +gef_corporate_logo
+
+
+mixin output
+  +gef_corporate_logo
+
+//--- OUTPUT ---//
+//---------------------------------------------------------
+
+mixin gef_corporate_logo
+
+  div.gef-corporate-logo
+    a.gef-corporate-logo__link(href="#", title=corporateName)
+      span.uk-hidden
+        | #{corporateName} logo
+      img.gef-corporate-logo__image(src="images/doe-black-logo.png", alt=corporateName + ' Corporate Logo')

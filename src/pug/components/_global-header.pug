@@ -1,0 +1,19 @@
+mixin global_header(search)
+
+  div.gef-global-header
+
+    div.uk-container.uk-container-center
+      div.uk-grid.uk-grid-collapse
+
+        div.uk-width-1-4.uk-visible-small
+          a.gef-global-header__menu-toggle.uk-icon-bars(data-uk-offcanvas="{target:'#offcanvas-nav', mode:'slide'}" href="#")
+            span.show-on-sr Menu
+
+        div.uk-width-3-4.uk-width-medium-1-1
+
+          a.gef-global-header__header(href="homepage.html" title=corporateName)
+            abbr(title=corporateName aria-hidden="true")
+              =corporateNameShort
+
+          +utility_bar
+          if search == true

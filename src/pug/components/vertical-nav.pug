@@ -1,0 +1,21 @@
+mixin vertical_nav
+
+  div.uk-panel.uk-panel-box.sws-vertical-nav
+    ul.uk-nav.uk-nav-side.uk-nav-parent-icon(data-uk-nav="{multiple:true}")
+      li.uk-active
+        a(href="#")
+          +lipsum(2, "words")
+
+      li.uk-parent
+        a(href="#")
+          +lipsum(2, "words")
+        ul.uk-nav-sub
+          +list_item(3)
+
+
+      +list_item(2)
+
+      li.uk-nav-divider
+
+      li.uk-nav-header Quicklinks
+        +quicklinks(totalQuickLinks, true)

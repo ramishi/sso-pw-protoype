@@ -1,0 +1,107 @@
+mixin calendar
+
+  .uk-datepicker.sws-calendar
+    .uk-datepicker-nav
+      a.uk-datepicker-previous(href="#")
+      a.uk-datepicker-next(href="#")
+      .uk-datepicker-heading
+        span.uk-form-select September
+          select.update-picker-month
+            option(value="0") January
+            option(value="1") February
+            option(value="2") March
+            option(value="3") April
+            option(value="4") May
+            option(value="5") June
+            option(value="6") July
+            option(value="7") August
+            option(value="8" selected="") September
+            option(value="9") October
+            option(value="10") November
+            option(value="11") December
+
+        span.uk-form-select 2016
+          select.update-picker-year
+            option(value="2007") 2007
+            option(value="2008") 2008
+            option(value="2009") 2009
+            option(value="2010") 2010
+            option(value="2011") 2011
+            option(value="2012") 2012
+            option(value="2013") 2013
+            option(value="2014") 2014
+            option(value="2015") 2015
+            option(value="2016" selected="") 2016
+            option(value="2017") 2017
+            option(value="2018") 2018
+            option(value="2019") 2019
+            option(value="2020") 2020
+            option(value="2021") 2021
+            option(value="2022") 2022
+            option(value="2023") 2023
+            option(value="2024") 2024
+            option(value="2025") 2025
+            option(value="2026") 2026
+            option(value="2027") 2027
+            option(value="2028") 2028
+            option(value="2029") 2029
+            option(value="2030") 2030
+            option(value="2031") 2031
+            option(value="2032") 2032
+            option(value="2033") 2033
+            option(value="2034") 2034
+            option(value="2035") 2035
+            option(value="2036") 2036
+
+    table.uk-datepicker-table
+      thead
+        tr
+          th Mon
+          th Tue
+          th Wed
+          th Thu
+          th Fri
+          th Sat
+          th Sun
+
+      tbody
+        tr
+          td: a.uk-datepicker-table-muted(data-date="2016-08-29T12:00:00+10:00") 29
+          td: a.uk-datepicker-table-muted(data-date="2016-08-30T12:00:00+10:00") 30
+          td: a.uk-datepicker-table-muted(data-date="2016-08-31T12:00:00+10:00") 31
+          td: a(data-date="2016-09-01T12:00:00+10:00") 1
+          td: a(data-date="2016-09-02T12:00:00+10:00") 2
+          td: a(data-date="2016-09-03T12:00:00+10:00") 3
+          td: a(data-date="2016-09-04T12:00:00+10:00") 4
+        tr
+          td: a(data-date="2016-09-05T12:00:00+10:00") 5
+          td: a(data-date="2016-09-06T12:00:00+10:00") 6
+          td: a(data-date="2016-09-07T12:00:00+10:00") 7
+          td: a(data-date="2016-09-08T12:00:00+10:00") 8
+          td: a(data-date="2016-09-09T12:00:00+10:00") 9
+          td: a.uk-badge.uk-badge-notification(data-date="2016-09-10T12:00:00+10:00" title="Event Name" data-uk-tooltip) 10
+          td: a(data-date="2016-09-11T12:00:00+10:00") 11
+        tr
+          td: a(data-date="2016-09-12T12:00:00+10:00") 12
+          td: a(data-date="2016-09-13T12:00:00+10:00") 13
+          td: a(data-date="2016-09-14T12:00:00+10:00") 14
+          td: a(data-date="2016-09-15T12:00:00+10:00") 15
+          td: a.uk-badge.uk-badge-notification(data-date="2016-09-16T12:00:00+10:00" title="Event Name" data-uk-tooltip) 16
+          td: a.uk-badge.uk-badge-notification(data-date="2016-09-17T12:00:00+10:00" title="Event Name" data-uk-tooltip) 17
+          td: a(data-date="2016-09-18T12:00:00+10:00") 18
+        tr
+          td: a(data-date="2016-09-19T12:00:00+10:00") 19
+          td: a.uk-badge.uk-badge-notification(data-date="2016-09-20T12:00:00+10:00" title="Event Name" data-uk-tooltip) 20
+          td: a(data-date="2016-09-21T12:00:00+10:00") 21
+          td: a(data-date="2016-09-22T12:00:00+10:00") 22
+          td: a(data-date="2016-09-23T12:00:00+10:00") 23
+          td: a(data-date="2016-09-24T12:00:00+10:00") 24
+          td: a(data-date="2016-09-25T12:00:00+10:00") 25
+        tr
+          td: a.uk-active(data-date="2016-09-26T12:00:00+10:00") 26
+          td: a(data-date="2016-09-27T12:00:00+10:00") 27
+          td: a.uk-badge.uk-badge-notification(data-date="2016-09-28T12:00:00+10:00" title="Event Name" data-uk-tooltip) 28
+          td: a(data-date="2016-09-29T12:00:00+10:00") 29
+          td: a(data-date="2016-09-30T12:00:00+10:00") 30
+          td: a.uk-datepicker-table-muted(data-date="2016-10-01T12:00:00+10:00") 1
+          td: a.uk-datepicker-table-muted(data-date="2016-10-02T12:00:00+11:00") 2

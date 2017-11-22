@@ -1,0 +1,76 @@
+//--- *************** ---//
+//--- GLOBAL FOOTER ---//
+//--- *************** ---//
+
+- var name = "Global Footer"
+
+//--- DOCUMENTATION ---//
+//---------------------------------------------------------
+
+mixin description
+  p
+    A container that serves global footer content.
+
+mixin usage
+  h4 Using pug:
+  pre
+    code.language-pug
+      | +global_footer()
+
+
+mixin output
+  +global_footer()
+
+//--- MIXINS ---//
+//---------------------------------------------------------
+
+mixin global_footer(showFeedback)
+
+  aside.gef-global-footer.uk-width-1-1
+
+    h1.show-on-sr
+      | #{corporateName}
+
+    div.uk-container.uk-container-center
+
+      div.gef-global-footer__inner.uk-grid
+
+        div.gef-global-footer__inner__wrapper.uk-width-medium-6-10.uk-width-large-7-10
+
+          nav.uk-grid
+
+            h2.show-on-sr
+              | Copyright, privacy and accessibility
+
+            div.uk-width-large-1-3
+              if showFeedback
+                button(class="gef-feedback-trigger") Provide Feedback
+
+            div.uk-width-medium-1-2.uk-width-large-1-3
+
+              ul.uk-list
+                li
+                  a(href="#") Accessibility
+                li
+                  a(href="#") Disclaimer
+                li
+                  a(href="#") Privacy
+                li
+                  a(href="#") Compliments and complaints
+
+
+            div.uk-width-medium-1-2.uk-width-large-1-3
+
+              ul.uk-list
+                li
+                  a(href="#") Copyright
+                li
+                  a(href="#") Customer service
+                li
+                  a(href="#") Translated documents
+                li
+                  a(href="#") NSW Government
+
+        div.gef-global-footer__inner__logo.uk-width-medium-4-10.uk-width-large-3-10
+
+          +gef_corporate_logo

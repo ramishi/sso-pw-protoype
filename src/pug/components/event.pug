@@ -1,0 +1,32 @@
+mixin event(number)
+  - var counter = 0
+  - var randomDate = function() {
+  -   var today = new Date();
+  -   var until = new Date("2018");
+  -   var date = new Date(today.getTime() + (until.getTime() - today.getTime()) * Math.random());
+  -   return date;
+  - }
+
+  while counter < number
+
+    div.uk-article.uk-grid
+      div.uk-width-1-1.uk-width-medium-2-6.uk-margin-bottom
+        figure.uk-overlay.uk-overlay-hover
+          img.uk-overlay-scale(src=`https://unsplash.it/270/200/?random&image=${counter+10}`)
+          div.uk-overlay-panel.uk-overlay-background.uk-overlay-bottom.uk-ignore
+            p
+              strong.uk-h1 #{Math.floor((Math.random() * 30) + 1)}
+              | days to go
+          a.uk-position-cover
+
+      div.uk-width-1-1.uk-width-medium-4-6
+        h1.uk-h3
+          a
+            +lipsum(3, "words")
+          span.uk-badge.uk-badge-success Year #{Math.floor((Math.random() * 12) + 1)}
+        p.uk-article-meta #{randomDate()}
+        p
+          +lipsum(4, "sentences")
+          a More details...
+
+    - counter++
