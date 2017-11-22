@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" class="common">
+
+<head>
+  <!--#include file="file-includes/head.html" -->
+  <title>Forgot my password Department of Education</title>
+</head>
+
+<body class="standard">
+  <!--#include file="file-includes/header.html" -->
+  <span id="content" tabindex="-1"></span>
+
+  <main class="gef-main sso-main">
+    <div class="uk-container uk-container-center">
+      <div class="uk-grid uk-grid-collapse">
+        <div class="uk-container-center uk-width-medium-7-10 uk-width-large-5-10 uk-margin-large-top uk-margin-large-bottom sso-container">
+          <div class="uk-block uk-block-default sso-block">
+            <div class="uk-container uk-text-center">
+
+              <h1 class="uk-h6 uk-margin-large-top">Reset password</h1>
+
+
+
+              <form class="uk-form" id="login_form" method="post" action="emailsent.html">
+
+                <fieldset>
+                  <legend class="show-on-sr">Department of Education reset password form</legend>
+                  <input type="hidden" name="goto" value="null" class="loginPortalBox">
+                  <p class="uk-margin-remove">To reset your password, enter your user ID:</p>
+                  <label for="username" class="show-on-sr" id="sr-username">User ID</label>
+                  <input type="text" id="username" name="username" placeholder="Enter your user ID" class="uk-width-medium-6-10 uk-margin-top"
+                    aria-labelledby="sr-username" aria-describedby="sso-example-id">
+                  <div class="sso-example-id-container uk-width-medium-6-10">
+                    <span id="sso-example-id" class="sso-example-id">Example: jane.citizen1</span>
+                  </div>
+                  <button name="btnSubmit" value="SUBMIT" type="submit" class="uk-button uk-margin-top formButton2">Continue</button>
+                </fieldset>
+
+              </form>
+              <p>
+                <a href="index.html">Return to login screen</a>
+              </p>
+              <!--#include virtual="/file-includes/help.html" -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+
+
+
+  <!--#include file="file-includes/footer.html" -->
+
+
+
+  <!--#include file="file-includes/scripts.html" -->
+
+</body>
+
+</html>

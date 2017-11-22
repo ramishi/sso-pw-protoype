@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" class="common">
+
+<head>
+  <!--#include file="file-includes/head.html" -->
+  <title>Login Department of Education</title>
+</head>
+
+<body class="standard">
+  <!--#include file="file-includes/header.html" -->
+  <span id="content" tabindex="-1"></span>
+
+  <main class="gef-main sso-main">
+    <div class="uk-container uk-container-center">
+      <div class="uk-grid uk-grid-collapse">
+        <div class="uk-container-center uk-width-medium-7-10 uk-width-large-5-10 uk-margin-large-top uk-margin-large-bottom sso-container">
+          <div class="uk-block uk-block-default sso-block">
+            <div class="uk-container uk-text-center">
+              <h1 id="forminfo" class="uk-h6 uk-margin-large-top">Log in with your DoE account</h1>
+              <fieldset>
+                <legend class="show-on-sr">Department of Education login form</legend>
+
+                <form name="frm1" class="uk-form" action="https://sso.test.det.nsw.edu.au/sso/UI/blank" onsubmit="defaultSubmit(); return false;"
+                  method="post">
+                  <p class="uk-margin-remove">&nbsp;</p>
+                  <div>
+                    <div class="sso-example-id-container uk-width-medium-6-10">
+                      <label for="IDToken1" class="sso-field-label" id="lblUserid">User ID</label>
+                    </div>
+
+                    <input type="text" name="IDToken1" id="IDToken1" value="" autocomplete="username" autocorrect="off" autocapitalize="none"
+                      placeholder="Enter your user ID" class="uk-width-medium-6-10 uk-margin-top" aria-describedby="sso-example-id"
+                      aria-labelledby="lblUserid" autofocus="">
+                    <div class="sso-example-id-container uk-width-medium-6-10">
+                      <span id="sso-example-id" class="sso-example-id">Example: jane.citizen1</span>
+                    </div>
+                  </div>
+                </form>
+
+                <form name="frm2" class="uk-form" action="https://sso.test.det.nsw.edu.au/sso/UI/blank" onsubmit="defaultSubmit(); return false;"
+                  method="post">
+                  <p class="uk-margin-remove">&nbsp;</p>
+                  <div>
+                    <div class="sso-example-id-container uk-width-medium-6-10">
+                      <label for="IDToken2" class="sso-field-label" id="lblPassword">Password</label>
+                    </div>
+                    <input type="password" name="IDToken2" id="IDToken2" value="" placeholder="Enter your password" class="uk-width-medium-6-10 uk-margin-top"
+                      autocomplete="current-password" autocorrect="off" autocapitalize="none" aria-labelledby="lblPassword">
+                  </div>
+                </form>
+
+                <input name="Login.Submit" type="button" class="uk-button uk-margin-top" value=" Log in " onclick="javascript:LoginSubmit(); return false;">
+
+              </fieldset>
+
+              <p>
+                <a href="forgot.html">Forgot your password?</a>
+              </p>
+              <!--#include virtual="/file-includes/help.html" -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+
+
+
+  <!--#include file="file-includes/footer.html" -->
+
+
+
+  <!--#include file="file-includes/scripts.html" -->
+
+</body>
+
+</html>
