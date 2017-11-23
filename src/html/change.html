@@ -64,7 +64,7 @@
                 <input name="Login.Submit" type="submit" class="uk-button uk-margin-top" value=" Update ">
               </form>
               <p>
-                  <a href="index.html">Cancel</a>
+                  <a href="login.html">Cancel</a>
                 </p>
                 <p class="uk-margin-remove">&nbsp;</p>
               </fieldset>
@@ -83,7 +83,20 @@
 
   <!--#include file="file-includes/footer.html" -->
 
-
+  <script src="https://cdn.jsdelivr.net/npm/add-to-homescreen@3.2.6/dist/addtohomescreen.min.js"></script>
+  <script>
+  // addToHomescreen.removeSession();     // use this to remove the localStorage variable
+  var ath = addToHomescreen({
+      debug: 'android',           // activate debug mode in ios emulation
+      skipFirstVisit: false,	// show at first access
+      startDelay: 0,          // display the message right away
+      lifespan: 0,            // do not automatically kill the call out
+      displayPace: 0,         // do not obey the display pace
+      privateModeOverride: true,	// show the message in private mode
+      maxDisplayCount: 0      // do not obey the max display count
+  });
+  // ath.clearSession();      // reset the user session
+  </script>
 
   <!--#include file="file-includes/scripts.html" -->
 
