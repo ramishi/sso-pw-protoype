@@ -1,6 +1,9 @@
 {
   "name": "sso-pw-prototype",
   "version": "1.0.0",
+  "engines": {
+    "node": "8.9.1"
+  },
   "description": "Lean UX prototype for IDM/SSO Password management project",
   "main": "index.html",
   "scripts": {
