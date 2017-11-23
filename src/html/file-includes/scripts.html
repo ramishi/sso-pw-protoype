@@ -1,12 +1,12 @@
-<script src="https://code.jquery.com/jquery-2.2.4.min.js">
+<script src="vendors/jquery-2.2.4.min.js">
 
 
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js">
+<script src="vendors/zxcvbn.js">
 
 
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/hideshowpassword/2.1.1/hideShowPassword.min.js">
+<script src="vendors/hideShowPassword.min.js">
 
 
 </script>
@@ -49,14 +49,15 @@
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, " "));
   }
-
-  $(document).ready(function () {
-    //set user id from url param
-    var id = getParameterByName('id');
-    console.log(id);
+  //set user id from url param
+  var id = getParameterByName('id');
     if(id !== null ){
       $('#IDToken1').val(id).prop('disabled', true);;
     }
+
+  $(document).ready(function () {
+    
+
 
 
     //show password toggle
