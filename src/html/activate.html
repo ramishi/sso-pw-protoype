@@ -1,5 +1,4 @@
-<!doctype html>
-<html lang="en" class="common" manifest="vendors/doe.manifest">
+<!--#include file="file-includes/doctype.html" -->
 
 <head>
   <!--#include file="file-includes/head.html" -->
@@ -18,14 +17,12 @@
             <div class="uk-container uk-text-center">
 
               <h1 class="uk-h6 uk-margin-large-top">Verify your identity</h1>
+              <!--#include file="file-includes/error.html" -->
 
 
-
-
-              <form class="uk-form" id="login_form" method="post" action="create.html">
-
-                <fieldset>
-                  <legend class="show-on-sr">Department of Education reset password form</legend>
+              <fieldset>
+                <legend class="show-on-sr">Department of Education reset password form</legend>
+                <form class="uk-form" id="login_form" method="post" action="create.html">
                   <div>
                     <div class="sso-example-id-container uk-width-medium-6-10">
                       <p class="sso-field-label">Please enter the following information to verify your identity.</p>
@@ -57,9 +54,9 @@
                   </div>
                   <p class="uk-margin-remove">&nbsp;</p>
                   <button name="btnSubmit" value="" type="submit" class="uk-button uk-margin-top formButton2">Verify</button>
-                </fieldset>
-
-              </form>
+                </form>
+              </fieldset>
+              <p class="uk-margin-remove">&nbsp;</p>
             </div>
           </div>
         </div>
@@ -72,11 +69,21 @@
 
 
   <!--#include file="file-includes/footer.html" -->
-
-
-
+  <!--#include file="file-includes/float.html" -->
   <!--#include file="file-includes/scripts.html" -->
 
+  <script>
+    $("form").submit(function (event) {
+
+      event.preventDefault();
+      url = window.location.href;
+      urlQueryString = url.slice(url.indexOf("?")); //return value is ?p=parameter
+      destLink = "create.html" + urlQueryString;
+      console.log(destLink);
+      window.location.href = destLink;
+    });
+
+  </script>
 </body>
 
 </html>

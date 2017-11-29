@@ -51,12 +51,31 @@
   }
   //set user id from url param
   var id = getParameterByName('id');
-    if(id !== null ){
-      $('#IDToken1').val(id).prop('disabled', true);;
-    }
+  if (id !== null) {
+    $('#IDToken1').val(id).prop('disabled', true);;
+  }
 
+  //check password mactch
+  function checkPasswordMatch() {
+    var password = $("#IDToken2").val();
+    var confirmPassword = $("#IDToken3").val();
+
+    if (password != confirmPassword) {
+      $(".sso-error").show();
+      $("#error-text").html("Passwords do not match!");
+    } else if (password == "") {
+      $(".sso-error").show();
+      $("#error-text").html("Passwords cannot be empty!");
+    } else if ($("li").hasClass("invalid")) {
+      $(".sso-error").show();
+      $("#error-text").html("Passwords policy not met!");
+    } else {
+      $(".sso-error").hide();
+      return true;
+    }
+  }
   $(document).ready(function () {
-    
+
 
 
 

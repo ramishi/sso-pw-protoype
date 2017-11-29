@@ -1,5 +1,4 @@
-<!doctype html>
-<html lang="en" class="common" manifest="vendors/doe.manifest">
+<!--#include file="file-includes/doctype.html" -->
 
 <head>
   <!--#include file="file-includes/head.html" -->
@@ -17,6 +16,7 @@
           <div class="uk-block uk-block-default sso-block">
             <div class="uk-container uk-text-center">
               <h1 id="forminfo" class="uk-h6 uk-margin-large-top">Create password</h1>
+              <!--#include file="file-includes/error.html" -->
               <fieldset>
                 <legend class="show-on-sr">Department of Education create password form</legend>
 
@@ -52,10 +52,10 @@
                     </div>
                     <p class="uk-margin-remove">&nbsp;</p>
                   </div>
-                
 
-                <input name="Login.Submit" type="submit" class="uk-button uk-margin-top" value=" Save ">
-              </form>
+
+                  <input name="Login.Submit" type="submit" class="uk-button uk-margin-top" value=" Save ">
+                </form>
                 <p class="uk-margin-remove">&nbsp;</p>
               </fieldset>
               <p class="uk-margin-remove">&nbsp;</p>
@@ -72,11 +72,22 @@
 
 
   <!--#include file="file-includes/footer.html" -->
-
+  <!--#include file="file-includes/float.html" -->
 
 
   <!--#include file="file-includes/scripts.html" -->
+  <script>
+    $("form").submit(function (event) {
 
+      event.preventDefault();
+
+
+      if (checkPasswordMatch()) {
+        window.location.href = "created.html";
+      }
+    });
+
+  </script>
 </body>
 
 </html>
