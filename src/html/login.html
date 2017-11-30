@@ -16,6 +16,7 @@
           <div class="uk-block uk-block-default sso-block">
             <div class="uk-container uk-text-center">
               <h1 id="forminfo" class="uk-h6 uk-margin-large-top">Log in with your DoE account</h1>
+              <!--#include file="file-includes/error.html" -->
               <fieldset>
                 <legend class="show-on-sr">Department of Education login form</legend>
 
@@ -70,9 +71,25 @@
 
   <!--#include file="file-includes/footer.html" -->
 
+  <!--#include file="file-includes/float.html" -->
 
 
   <!--#include file="file-includes/scripts.html" -->
+  <script>
+    function LoginSubmit() {
+      'use strict';
+      var data = JSON.parse(sessionStorage.getItem('dataStore'));
+      console.log(data);
+      if (data.type === 'forgot') {
+        showError('The user ID or password you entered is incorrect');
+      } else {
+        console.log('expired');
+        window.location.href = 'change.html?id=' + data.id;
+      }
+    }
+
+
+  </script>
 
 </body>
 

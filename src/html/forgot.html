@@ -20,7 +20,7 @@
 
 
 
-              <form class="uk-form" id="login_form" method="post" action="emailsent.html">
+              <form class="uk-form" id="login_form" method="post" action="">
 
                 <fieldset>
                   <legend class="show-on-sr">Department of Education reset password form</legend>
@@ -32,7 +32,7 @@
                   <div class="sso-example-id-container uk-width-medium-6-10">
                     <span id="sso-example-id" class="sso-example-id">Example: jane.citizen1</span>
                   </div>
-                  <button name="btnSubmit" value="SUBMIT" type="submit" class="uk-button uk-margin-top formButton2">Continue</button>
+                  <button name="btnSubmit" value="SUBMIT" type="submit" class="uk-button uk-margin-top formButton2" onclick="javascript:sendEmail('emailsent.html'); return false;">Continue</button>
                 </fieldset>
 
               </form>
@@ -53,6 +53,7 @@
 
   <!--#include file="file-includes/footer.html" -->
 
+  <!--#include file="file-includes/float.html" -->
 
 
   <!--#include file="file-includes/scripts.html" -->

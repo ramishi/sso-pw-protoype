@@ -16,6 +16,7 @@
           <div class="uk-block uk-block-default sso-block">
             <div class="uk-container uk-text-center">
               <h1 id="forminfo" class="uk-h6 uk-margin-large-top">Change password</h1>
+              <!--#include file="file-includes/error.html" -->
               <fieldset>
                 <legend class="show-on-sr">Department of Education change password form</legend>
 
@@ -38,7 +39,7 @@
                       <div class="sso-example-id-container uk-width-medium-6-10">
                           <label for="IDToken2" class="sso-field-label" id="lblPassword2">Existing Password</label>
     
-                          <input type="password" name="IDToken3" id="IDToken3" value="" placeholder="Verify your current password" class=" uk-margin-top"
+                          <input type="password" name="IDToken" id="IDToken" value="" placeholder="Verify your current password" class=" uk-margin-top"
                             autocomplete="current-password" autocorrect="off" autocapitalize="none" aria-labelledby="lblPassword2">
                         </div>
                         <p class="uk-margin-remove">&nbsp;</p>
@@ -82,6 +83,8 @@
 
   <!--#include file="file-includes/footer.html" -->
 
+  <!--#include file="file-includes/float.html" -->
+  <!--#include file="file-includes/scripts.html" -->
   <script src="vendors/addtohomescreen.min.js"></script>
   <script>
   //addToHomescreen.removeSession();     // use this to remove the localStorage variable
@@ -96,6 +99,21 @@
       detectHomescreen: true
   });
   //ath.clearSession();      // reset the user session
+
+  var data = JSON.parse(sessionStorage.getItem('dataStore'));
+      console.log(data);
+      if (data.type === 'expired') {
+        showError('Your password has expired! Please change.');
+      }
+  $("form").submit(function (event) {
+
+      event.preventDefault();
+
+
+      if (checkPasswordMatch()) {
+        window.location.href = "created.html";
+      }
+    });
   </script>
 
   <!--#include file="file-includes/scripts.html" -->

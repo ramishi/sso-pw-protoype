@@ -74,6 +74,41 @@
       return true;
     }
   }
+
+  function sendEmail(redirect) { // handles form submit withtout any jquery
+    var data = JSON.parse(sessionStorage.getItem('dataStore'));
+    var url = 'https://script.google.com/macros/s/AKfycbxfle4qia-R9lm3IC0zCmAo1THD2qq6BO2Ry9TwBCxJjQb7iS8/exec'; //
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', url);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onreadystatechange = function () {
+      console.log(xhr.status, xhr.statusText);
+      console.log(xhr.responseText);
+
+      window.location.href = redirect;
+      return;
+    };
+    // url encode form data for sending as post data
+    var encoded = Object.keys(data).map(function (k) {
+      return encodeURIComponent(k) + '=' + encodeURIComponent(data[k]);
+    }).join('&');
+    xhr.send(encoded);
+    console.log(encoded);
+
+  }
+
+  //show error msg
+  function showError(msg) {
+
+    if (msg != null) {
+      $(".sso-error").show();
+      $("#error-text").html(msg);
+
+    } else {
+      $(".sso-error").hide();
+      return true;
+    }
+  }
   $(document).ready(function () {
 
 

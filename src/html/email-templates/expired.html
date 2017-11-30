@@ -340,7 +340,7 @@
         <div class="content">
 
           <!-- START CENTERED WHITE CONTAINER -->
-          <span class="preheader">Forgot your DoE Password?</span>
+          <span class="preheader"></span>
           <table class="main">
 
             <!-- START MAIN CONTENT AREA -->
@@ -354,10 +354,10 @@
                       </p>
                       <p></p>
                       <br>
-                      <h2>Forgot your password?</h2>
+                      <h2>Password Reset Required</h2>
 
-                      <p>Hi %firstname%,</p>
-                      <p>Someone has requested a link to change your password. You can do this through the link below.</p>
+                      <p>Dear %firstname%,</p>
+                      <p>Your Department of Education Portal password has expired. Changing your password will automatically change and synchronise your Staff Portal and network passwords. Please change your password through the link below.</p>
                       <table border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
                         <tbody>
                           <tr>
@@ -366,7 +366,7 @@
                                 <tbody>
                                   <tr>
                                     <td>
-                                      <a href="http://passwordmanagement.azurewebsites.net/create.html?id=%id%" target="_blank">Reset DoE Password</a>
+                                      <a href="http://passwordmanagement.azurewebsites.net/change.html?id=%id%" target="_blank">Change DoE password</a>
                                     </td>
                                   </tr>
                                 </tbody>
@@ -375,12 +375,12 @@
                           </tr>
                         </tbody>
                       </table>
-                      
                       <h3>Button not working?</h3>
-                      <p>Copy and paste the link below into your browser:<br><a href="http://passwordmanagement.azurewebsites.net/create.html?id=%id%" target="_blank">https://sso.det.nsw.edu.au/sso/UI/qfXTC354TXCbKgYVvQpo</a>
+                      <p>Copy and paste the link below into your browser:<br>
+                        <a href="http://passwordmanagement.azurewebsites.net/change.html?id=%id%" target="_blank">https://sso.det.nsw.edu.au/sso/UI/qfXTC354TXCbKgYVvQpo</a>
                       </p>
-                      <hr>
-                      <p>If you didn't request a new password, don't worry. Your account is safe. Simply disregard this email.</p>
+                      
+                      
                       <p>Regards, </p>
                       <p>The Identity Management Team - Information Technology Directorate </p>
                     </td>

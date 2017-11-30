@@ -65,9 +65,9 @@ function getFormData() {
       subjectLine = 'Forgot your DoE password?';
       break;
     case 'change':
-      subjectLine = 'Change password reminder, your DoE password is expiring';
+      subjectLine = 'Change password reminder, your DoE password is expiring in 10 days';
       break;
-    case 'expiry':
+    case 'expired':
       subjectLine = 'Your DoE password has expired';
       break;
   }
@@ -87,13 +87,26 @@ function handleFormSubmit(event) { // handles form submit withtout any jquery
   if (validateHuman(data.honeypot)) { //if form is filled, form will not be submitted
     return false;
   }
+  if (sessionStorage) {
+    // Store data
+    sessionStorage.setItem('dataStore', JSON.stringify(data));
 
+    // Retrieve data
+    console.log(JSON.parse(sessionStorage.getItem('dataStore')));
+  } else {
+    alert('Sorry, your browser do not support session storage.');
+  }
 
   if (!validEmail(data.email)) { // if email is not valid show error
     document.getElementById('email-invalid').style.display = 'block';
     return false;
+  } else if (data.type === 'forgot' || data.type === 'expired') {
+    console.log('forgot or expired');
+    
+    window.location.href = 'login.html';
+
   } else {
-    var url = event.target.action; //
+    var url = 'https://script.google.com/macros/s/AKfycbxfle4qia-R9lm3IC0zCmAo1THD2qq6BO2Ry9TwBCxJjQb7iS8/exec'; //
     var xhr = new XMLHttpRequest();
     xhr.open('POST', url);
     // xhr.withCredentials = true;
@@ -120,6 +133,18 @@ function loaded() {
   console.log('contact form submission handler loaded successfully');
   // bind to the submit event of our form
   var form = document.getElementById('gform');
+  if (sessionStorage) {
+    // Retrieve data
+    var dataStore = JSON.parse(sessionStorage.getItem('dataStore'));
+    if (dataStore) {
+      //console.log(dataStore.id + dataStore.id);
+      document.getElementById('id').value = dataStore.id;
+      document.getElementById('email').value = dataStore.email;
+    }
+    
+  } else {
+    alert('Sorry, your browser do not support session storage.');
+  }
   form.addEventListener('submit', handleFormSubmit, false);
 };
 document.addEventListener('DOMContentLoaded', loaded, false);
