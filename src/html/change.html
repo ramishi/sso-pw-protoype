@@ -1,5 +1,5 @@
-<!--#include file="file-includes/doctype.html" -->
-
+<!doctype html>
+<html lang="en" class="common" manifest="vendors/doe.manifest">
 <head>
   <!--#include file="file-includes/head.html" -->
   <title>Change Password Department of Education</title>
@@ -36,13 +36,13 @@
                   </div>
                   <p class="uk-margin-remove">&nbsp;</p>
                   <div>
-                      <div class="sso-example-id-container uk-width-medium-6-10">
-                          <label for="IDToken2" class="sso-field-label" id="lblPassword2">Existing Password</label>
-    
-                          <input type="password" name="IDToken" id="IDToken" value="" placeholder="Verify your current password" class=" uk-margin-top"
-                            autocomplete="current-password" autocorrect="off" autocapitalize="none" aria-labelledby="lblPassword2">
-                        </div>
-                        <p class="uk-margin-remove">&nbsp;</p>
+                    <div class="sso-example-id-container uk-width-medium-6-10">
+                      <label for="IDToken2" class="sso-field-label" id="lblPassword2">Existing Password</label>
+
+                      <input type="password" name="IDToken" id="IDToken" value="" placeholder="Verify your current password" class=" uk-margin-top"
+                        autocomplete="current-password" autocorrect="off" autocapitalize="none" aria-labelledby="lblPassword2">
+                    </div>
+                    <p class="uk-margin-remove">&nbsp;</p>
                     <div class="sso-example-id-container uk-width-medium-6-10">
                       <label for="IDToken2" class="sso-field-label" id="lblPassword">New Password</label>
 
@@ -59,11 +59,11 @@
                     </div>
                     <p class="uk-margin-remove">&nbsp;</p>
                   </div>
-                
 
-                <input name="Login.Submit" type="submit" class="uk-button uk-margin-top" value=" Update ">
-              </form>
-              <p>
+
+                  <input name="Login.Submit" type="submit" class="uk-button uk-margin-top" value=" Update ">
+                </form>
+                <p>
                   <a href="login.html">Cancel</a>
                 </p>
                 <p class="uk-margin-remove">&nbsp;</p>
@@ -87,25 +87,25 @@
   <!--#include file="file-includes/scripts.html" -->
   <script src="vendors/addtohomescreen.min.js"></script>
   <script>
-  //addToHomescreen.removeSession();     // use this to remove the localStorage variable
-  var ath = addToHomescreen({
-      //debug: 'android',           // activate debug mode in ios emulation
-      skipFirstVisit: false,	// show at first access
-      startDelay: 0,          // display the message right away
-      lifespan: 0,            // do not automatically kill the call out
-      displayPace: 0,         // do not obey the display pace
+    //addToHomescreen.removeSession();     // use this to remove the localStorage variable
+    var ath = addToHomescreen({
+      //debug: 'ios', // activate debug mode in ios emulation
+      skipFirstVisit: false, // show at first access
+      startDelay: 0, // display the message right away
+      lifespan: 0, // do not automatically kill the call out
+      displayPace: 0, // do not obey the display pace
       //privateModeOverride: true,	// show the message in private mode
-      maxDisplayCount: 0,      // do not obey the max display count
+      maxDisplayCount: 0, // do not obey the max display count
       detectHomescreen: true
-  });
-  //ath.clearSession();      // reset the user session
+    });
+    //ath.clearSession();      // reset the user session
 
-  var data = JSON.parse(sessionStorage.getItem('dataStore'));
-      console.log(data);
-      if (data.type === 'expired') {
-        showError('Your password has expired! Please change.');
-      }
-  $("form").submit(function (event) {
+    var data = JSON.parse(sessionStorage.getItem('dataStore'));
+    console.log(data);
+    if (data.type === 'expired') {
+      showError('Your password has expired! Please change.');
+    }
+    $("form").submit(function (event) {
 
       event.preventDefault();
 
@@ -114,6 +114,7 @@
         window.location.href = "created.html";
       }
     });
+
   </script>
 
   <!--#include file="file-includes/scripts.html" -->

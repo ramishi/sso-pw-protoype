@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Cache manifest version 0.0.2
+# Cache manifest version 0.0.3
 
 CACHE:
 ../css/font.css
@@ -9,10 +9,11 @@ CACHE:
 ../vendors/zxcvbn.js
 ../css/core.css
 ../vendors/hideShowPassword.min.js
-../images/doe-black-logo.png
-../images/icon-152x152.png
-../images/icon-16x16.png
-../images/icon-196x196.png
+/images/doe-black-logo.png
+/images/icon-152x152.png
+/images/icon-16x16.png
+/images/icon-196x196.png
+/images/icon-540x540.png
 ../vendors/wink.svg
 ../vendors/fonts/gFXtEMCp1m_YzxsBpKl68gsYbbCjybiHxArTLjt7FRU.woff2
 ../vendors/fonts/zhcz-_WihjSQC0oHJ9TCYAzyDMXhdD8sAj6OAJTFsBI.woff2

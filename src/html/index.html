@@ -14,7 +14,7 @@
   <h2 class="content-head is-center">Password management prototype</h2>
   <aside>
     <p>
-      To start the prototype, please enter your DET user ID and personal email. Then choose the following scenarios to start your
+      To start the prototype, please enter your DET user ID and an email address. Then choose the following scenarios to start your
       user journey.
     </p>
   </aside>
@@ -24,16 +24,16 @@
   <form id="gform" method="POST" class="pure-form pure-form-stacked" data-type="" action="">
     <!-- change the form action to your script url -->
     <!--input id must be honeypot or else it wont work-->
-    <label class="sr-only">Keep this field blank</label>
+    <label class="sr-only"></label>
     <input id="honeypot" type="text" name="honeypot" value="" style="display: none" />
     <fieldset class="pure-group">
-      <label for="id">DET Usr ID: </label>
+      <label for="id">DET User ID: </label>
       <input id="id" name="id" placeholder="e.g. john.smith1" required />
     </fieldset>
 
 
     <fieldset class="pure-group">
-      <label for="email">Personal Email Address:</label>
+      <label for="email">Email Address(for reset email):</label>
       <input id="email" name="email" type="email" value="" required placeholder="your.name@email.com" />
       <span id="email-invalid" style="display:none">
         Must be a valid email address</span>
@@ -46,9 +46,9 @@
       <label for="radio-group--forgot">
         <input id="radio-group--forgot" type="radio" name="type" value="forgot"> Forgotten</label>
       <label for="radio-group--change">
-        <input id="radio-group--change" type="radio" name="type" value="change" >Change</label>
+        <input id="radio-group--change" type="radio" name="type" value="change" disabled>Change</label>
       <label for="radio-group--expired">
-        <input id="radio-group--expired" type="radio" name="type" value="expired">Expired</label>
+        <input id="radio-group--expired" type="radio" name="type" value="expired" disabled>Expired</label>
     </fieldset>
     <button class="button-success pure-button button-xlarge">
       Start</button>

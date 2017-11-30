@@ -1,0 +1,14 @@
+{
+  "short_name": "Change Password",
+  "name": "DoE Change Password",
+  "icons": [
+    {
+      "src": "/images/icon-540x540.png",
+      "sizes": "540x540",
+      "type": "image/png"
+    }
+  ],
+  "background_color": "#0E3E52",
+  "display": "standalone",
+  "orientation": "portrait"
+}
