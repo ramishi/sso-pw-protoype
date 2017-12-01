@@ -7,60 +7,225 @@
   <title>DoE Password management prototype</title>
 
   <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+  <style>
+    * {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    body {
+      line-height: 1.7em;
+      font-size: 13px;
+    }
+
+    .is-center {
+      text-align: center;
+    }
+
+    .button-xlarge {
+      font-size: 125%;
+      padding: 10px 60px;
+      margin: 2em;
+    }
+
+    .home-menu {
+      padding: 0.5em;
+      text-align: center;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.10);
+      color: white;
+    }
+
+    .home-menu {
+      background: #003e52;
+    }
+
+    .pure-menu.pure-menu-fixed {
+      /* Fixed menus normally have a border at the bottom. */
+      border-bottom: none;
+      /* I need a higher z-index here because of the scroll-over effect. */
+      z-index: 4;
+    }
+
+    .content-head {
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin: 2em 0 1em;
+    }
+
+    .middle {
+      width: 80%;
+      margin: auto;
+      margin-top: 90px;
+    }
+
+    .middle input[type="radio"] {
+      text-indent: -9999px;
+      position: absolute;
+    }
+
+    .middle input[type="radio"]:checked+.box {
+      background-color: #003e52;
+    }
+
+    .middle input[type="radio"]:checked+.box span {
+      color: white;
+    }
+
+
+
+    .middle .box {
+      width: 200px;
+      background-color: #fff;
+      transition: all 250ms ease;
+      will-change: transition;
+      display: inline-block;
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+      font-weight: 700;
+      border: 2px solid #003e52;
+      border-radius: 7px;
+
+      padding: 7px 40px;
+    }
+
+
+
+    .middle .box span {
+      transition: all 300ms ease;
+      font-size: 1em;
+      user-select: none;
+      color: #003e52;
+    }
+
+
+    @media (min-width: 48em) {
+
+      /* We increase the body font size */
+      body {
+        font-size: 16px;
+      }
+
+      /* We can align the menu header to the left, but float the
+    menu items to the right. */
+      .home-menu {
+        text-align: left;
+      }
+      .home-menu ul {
+        float: right;
+      }
+    }
+
+  </style>
 </head>
 
 <body>
 
-  <h2 class="content-head is-center">Password management prototype</h2>
-  <aside>
+  <div class="header">
+    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+      NSW Department of Education
+
+      <ul class="pure-menu-list">
+        <li class="pure-menu-item">UI &amp; Portal - TLE - ITD</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="middle">
+    <h1 class="content-head">Password management prototype</h1>
     <p>
-      To start the prototype, please enter your DET user ID and an email address. Then choose the following scenarios to start your
-      user journey.
+      To start the prototype, please enter your DET user ID and an email address. Then choose the following scenarios to start
+      your user journey.
     </p>
-  </aside>
+
+    <form id="gform" method="POST" class="pure-form pure-form-stacked" data-type="" action="">
+      <!-- change the form action to your script url -->
+      <!--input id must be honeypot or else it wont work-->
+      <label class="sr-only"></label>
+      <input id="honeypot" type="text" name="honeypot" value="" style="display: none" />
+      <fieldset>
+        <div class="pure-g">
+          <div class="pure-u-1 pure-u-md-1-2">
+            <label for="id">DET User ID: </label>
+            <input id="id" name="id" placeholder="e.g. john.smith1" required />
+          </div>
+          <div class="pure-u-1 pure-u-md-1-2">
+            <label for="email">Email Address(for reset email):</label>
+            <input id="email" name="email" type="email" value="" required placeholder="your.name@email.com" />
+            <span id="email-invalid" style="display:none">
+              Must be a valid email address</span>
+          </div>
+        </div>
+
+      </fieldset>
+
+      <fieldset>
+        <legend>choose a user jounery</legend>
+        <div class="pure-g">
+          <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+            <label for="radio-group--activation">
+              <input id="radio-group--activation" type="radio" name="type" value="activate" checked>
+              <div class="box">
+                <span>Activation</span>
+              </div>
+            </label>
+          </div>
+          <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+            <label for="radio-group--forgot">
+              <input id="radio-group--forgot" type="radio" name="type" value="forgot">
+              <div class="box">
+                <span>Forgotten</span>
+              </div>
+            </label>
+          </div>
+          <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+            <label for="radio-group--change">
+              <input id="radio-group--change" type="radio" name="type" value="change">
+              <div class="box">
+                <span>Change</span>
+              </div>
+            </label>
+          </div>
+          <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+            <label for="radio-group--expired">
+              <input id="radio-group--expired" type="radio" name="type" value="expired">
+              <div class="box">
+                <span>Expired</span>
+              </div>
+            </label>
+          </div>
+        </div>
+      </fieldset>
+      <hr>
+      <div class="is-center">
+        <button class="button-success pure-button button-xlarge">
+          Start</button>
+      </div>
+
+    </form>
+
+  </div>
+
+
+
+
+
+
 
   <!-- START HERE -->
 
-  <form id="gform" method="POST" class="pure-form pure-form-stacked" data-type="" action="">
-    <!-- change the form action to your script url -->
-    <!--input id must be honeypot or else it wont work-->
-    <label class="sr-only"></label>
-    <input id="honeypot" type="text" name="honeypot" value="" style="display: none" />
-    <fieldset class="pure-group">
-      <label for="id">DET User ID: </label>
-      <input id="id" name="id" placeholder="e.g. john.smith1" required />
-    </fieldset>
-
-
-    <fieldset class="pure-group">
-      <label for="email">Email Address(for reset email):</label>
-      <input id="email" name="email" type="email" value="" required placeholder="your.name@email.com" />
-      <span id="email-invalid" style="display:none">
-        Must be a valid email address</span>
-    </fieldset>
-
-    <fieldset class="pure-group">
-      <legend>choose a user jounery</legend>
-      <label for="radio-group--activation">
-        <input id="radio-group--activation" type="radio" name="type" value="activate" checked> Activation</label>
-      <label for="radio-group--forgot">
-        <input id="radio-group--forgot" type="radio" name="type" value="forgot"> Forgotten</label>
-      <label for="radio-group--change">
-        <input id="radio-group--change" type="radio" name="type" value="change" disabled>Change</label>
-      <label for="radio-group--expired">
-        <input id="radio-group--expired" type="radio" name="type" value="expired" disabled>Expired</label>
-    </fieldset>
-    <button class="button-success pure-button button-xlarge">
-      Start</button>
-
-  </form>
 
   <!-- Customise the Thankyou Message People See when they submit the form: -->
   <div style="display:none;" id="thankyou_message">
     <h2>
-     Email sent to <em id="msgEmail">email</em></h2>
-     <p>Please check your inbox to start the user journey.</p>
-     <button id="btnBack" onclick="this.parentNode.style.display = 'none';">back</button>
+      Email sent to
+      <em id="msgEmail">email</em>
+    </h2>
+    <p>Please check your inbox to start the user journey.</p>
+    <button id="btnBack" onclick="this.parentNode.style.display = 'none';">back</button>
   </div>
 
   <!-- Submit the Form to Google Using "AJAX" -->
