@@ -101,6 +101,22 @@
       color: #003e52;
     }
 
+    #thankyou_message {
+      display: block;
+      background-color: aliceblue;
+      position: absolute;
+      border-radius: 5px;
+      border: 1px solid lightblue;
+      margin: auto;
+      width: 70%;
+      z-index: 9;
+      left: 0;
+      right: 0;
+      padding: 25px;
+      top: 10%;
+      text-align: center;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.10);
+    }
 
     @media (min-width: 48em) {
 
@@ -150,11 +166,11 @@
         <div class="pure-g">
           <div class="pure-u-1 pure-u-md-1-2">
             <label for="id">DET User ID: </label>
-            <input id="id" name="id" placeholder="e.g. john.smith1" required />
+            <input id="id" name="id" placeholder="e.g. john.smith1" value="John.Smith1" required />
           </div>
           <div class="pure-u-1 pure-u-md-1-2">
             <label for="email">Email Address(for reset email):</label>
-            <input id="email" name="email" type="email" value="" required placeholder="your.name@email.com" />
+            <input id="email" name="email" type="email" value="itd.tle.uip@gmail.com" required placeholder="your.name@email.com" />
             <span id="email-invalid" style="display:none">
               Must be a valid email address</span>
           </div>
@@ -163,7 +179,7 @@
       </fieldset>
 
       <fieldset>
-        <legend>choose a user jounery</legend>
+        <legend>choose a user journey</legend>
         <div class="pure-g">
           <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
             <label for="radio-group--activation">
@@ -185,7 +201,7 @@
             <label for="radio-group--change">
               <input id="radio-group--change" type="radio" name="type" value="change">
               <div class="box">
-                <span>Change</span>
+                <span>Change/Expiring</span>
               </div>
             </label>
           </div>
@@ -225,7 +241,7 @@
       <em id="msgEmail">email</em>
     </h2>
     <p>Please check your inbox to start the user journey.</p>
-    <button id="btnBack" onclick="this.parentNode.style.display = 'none';">back</button>
+    <button id="btnBack" onclick="this.parentNode.style.display = 'none';">OK</button>
   </div>
 
   <!-- Submit the Form to Google Using "AJAX" -->
