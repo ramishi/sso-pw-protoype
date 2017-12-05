@@ -79,7 +79,7 @@
   <script>
     function LoginSubmit() {
       'use strict';
-      var data = JSON.parse(sessionStorage.getItem('dataStore'));
+      var data = JSON.parse(localStorage.getItem('dataStore'));
       console.log(data);
       if (data.type === 'forgot') {
         showError('The user ID or password you entered is incorrect');

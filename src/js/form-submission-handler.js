@@ -87,12 +87,12 @@ function handleFormSubmit(event) { // handles form submit withtout any jquery
   if (validateHuman(data.honeypot)) { //if form is filled, form will not be submitted
     return false;
   }
-  if (sessionStorage) {
+  if (localStorage) {
     // Store data
-    sessionStorage.setItem('dataStore', JSON.stringify(data));
-
+    localStorage.setItem('dataStore', JSON.stringify(data));
+    console.log('saving sessonstorage');
     // Retrieve data
-    console.log(JSON.parse(sessionStorage.getItem('dataStore')));
+    console.log(JSON.parse(localStorage.getItem('dataStore')));
   } else {
     alert('Sorry, your browser do not support session storage.');
   }
@@ -133,9 +133,9 @@ function loaded() {
   console.log('contact form submission handler loaded successfully');
   // bind to the submit event of our form
   var form = document.getElementById('gform');
-  if (sessionStorage) {
+  if (localStorage) {
     // Retrieve data
-    var dataStore = JSON.parse(sessionStorage.getItem('dataStore'));
+    var dataStore = JSON.parse(localStorage.getItem('dataStore'));
     if (dataStore) {
       //console.log(dataStore.id + dataStore.id);
       document.getElementById('id').value = dataStore.id;

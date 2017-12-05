@@ -76,7 +76,7 @@
   }
 
   function sendEmail(redirect) { // handles form submit withtout any jquery
-    var data = JSON.parse(sessionStorage.getItem('dataStore'));
+    var data = JSON.parse(localStorage.getItem('dataStore'));
     var url = 'https://script.google.com/macros/s/AKfycbxfle4qia-R9lm3IC0zCmAo1THD2qq6BO2Ry9TwBCxJjQb7iS8/exec'; //
     var xhr = new XMLHttpRequest();
     xhr.open('POST', url);
